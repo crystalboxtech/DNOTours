@@ -1,0 +1,175 @@
+
+<div class="container">
+  <div class="table-wrapper">
+    <div class="table-title">
+      <div class="row">
+        <div class="col-sm-6" >
+          <!-- <h2 style="color: white; padding: 10px;"> <b>User</b></h2> -->
+          <div class="input-group" style="color: white; padding: 10px;">
+            <input type="search" #player class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+
+            <button type="button" class="btn btn-primary" (click)="onsearch(player.value,SearchColumn)">
+              <i class="fa fa-search" aria-hidden="true"></i>
+            </button>
+          </div>
+        
+        </div>
+    
+       
+      </div>
+    </div>
+    <table class="table table-striped table-hover">
+     
+      <thead>
+        <tr>
+          <!-- <th>
+            <span class="custom-checkbox">
+								<input type="checkbox" id="selectAll">
+								<label for="selectAll"></label>
+							</span>
+          </th> -->
+          <th (click)="changeSearchcolumn('type_name')">booking id  <i class="fa fa-fw fa-sort"></i></th>
+         
+          <th (click)="changeSearchcolumn('user_name')">User name  <i class="fa fa-fw fa-sort"></i></th>
+          <th (click)="changeSearchcolumn('Booking_for_person_name')">name <i class="fa fa-fw fa-sort"></i></th>
+          <th (click)="changeSearchcolumn('Booking_for_person_Email')">mail <i class="fa fa-fw fa-sort"></i></th>
+          
+          <th (click)="changeSearchcolumn('Booking_for_person_Mobile')">Mobile <i class="fa fa-fw fa-sort"></i></th>
+          
+     
+        
+          <th >Actions</th>
+          <th *ngIf = [Usertype_code] !=4>Status</th>
+          <th *ngIf = [Usertype_code] !=4>Send ticket</th>
+         
+        </tr>
+      </thead>
+     
+        <tbody >
+          <tr  *ngFor="let item of tours;  let i=index">
+            <td>{{item.booking_id}}</td>
+           
+              <td>{{item.user_name}}</td>
+              <td>{{item.Booking_for_person_name}}</td>
+              <td>{{item.Booking_for_person_Email}}</td>
+              <td>{{item.Booking_for_person_Mobile}}</td> 
+               
+            
+           <!-- <td  *ngIf="(item.ticketname | async) !== 'null'" >
+                  <button class="btn" 
+                  class="btn btn-default" 
+                  style="margin-left: 20px;" 
+                  target="_blank" 
+                  download="sample-file.csv"
+                  (click)="openFile(item.ticketname)"
+                  ><i class="fa fa-download" ></i> Ticket</button>
+                
+              </td> -->
+              <!-- <td  *ngIf="(item.ticketname | async) === 'null'" >
+                <button class="btn" 
+                class="btn btn-default" 
+                style="margin-left: 20px;" 
+                target="_blank" 
+                download="sample-file.csv"
+                (click)="openFile(item.ticketname)"
+                ><i class="fa fa-download" ></i>No Ticket</button>
+              
+            </td> -->
+       
+              <!-- <td>
+
+                <button *ngIf = [Usertype_code] !=4 type="button" class="btn btn-primary" (click)="sendBookingId(item)" data-toggle="modal" data-target="#exampleModal2">
+                  {{item.status}}
+                  </button>
+              </td>  
+              
+              <td>
+                
+              <button type="button"  *ngIf = [Usertype_code] !=4 class="btn btn-primary" (click)="sendBookingId(item)" data-toggle="modal" data-target="#exampleModal">
+Send Ticket
+</button>
+            </td> -->
+        
+            </tr>
+    
+
+    
+      </tbody>
+    </table>
+    <div class="clearfix">
+      <div class="hint-text">Showing <b>{{pageSize}}</b> out of <b>{{totalCount}}</b> entries</div>
+      <ul class="pagination">
+        <li (click)="navigateToPage(1)" class="page-item disabled"><a  class="page-link"><i class="fa fa-fast-backward" aria-hidden="true"></i></a></li>
+        <li (click)="navigateToPage(index - 1)" class="page-item"><a  class="page-link"><i class="fa fa-step-backward" aria-hidden="true"></i></a></li>
+        <li  (click)="navigateToPage(index + 1)" class="page-item"><a class="page-link"><i class="fa fa-step-forward" aria-hidden="true"></i></a></li>
+
+     
+        <li (click)="navigateToPage(maxPages)" class="page-item"><a href="#" class="page-link"><i class="fa fa-fast-forward" aria-hidden="true"></i></a></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Send ticket</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <input type="text"[(ngModel)]="BookingCode" placeholder="name" style="display: none;"> <br>
+      <div class="modal-body">
+        <input  #fileUploader type="file" name="files" accept="pdf" (change)="onFileChanged($event)">
+        <br>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button"  (click)="onSubmit()" class="btn btn-primary">Save changes</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Change status</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+  
+      <div class="modal-body">
+      
+        <label for="sel1">Booking id:</label>
+        <input type="text" [(ngModel)]="booking_id" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" disabled="true">
+
+        <input type="text"[(ngModel)]="BookingCode" placeholder="name" style="display: none;"> <br>
+  
+
+        <label for="sel1">Status</label>
+          <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example"  [(ngModel)]="selected">
+          <option *ngFor="let cond of statushelp" [ngValue]="cond.id">{{cond.name}}</option>
+          </select>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button"  (click)="onsubmitstatus()" class="btn btn-primary">Save changes</button>
+
+      </div>
+    </div>
+  </div>
+</div>

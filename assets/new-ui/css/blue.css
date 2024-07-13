@@ -1,0 +1,58 @@
+
+
+
+.package-one .package-content .ct-action li>i,
+.recent-post-list li .post-content h5>a:hover, .link-widget li>a:hover, .footer-icon li>a:hover,
+.meta-tag li a:hover, .read-btn:hover,
+.meta-tag li a:hover, .read-btn:hover,
+.package-one .package-content p>span, .package-one:hover .package-content h3,
+.testi-slide-two .slick-dots li.slick-active button:before,
+ .testi-slide-one .slick-dots li.slick-active button:before, 
+ .destination-slide .slick-dots li.slick-active button:before,
+.text-theme,
+.single_package:hover .media-body h3,
+.single_package .media-body .direction,
+.servicebox-one .service-box-icon,
+.about-listing li>i,
+.navbar-light .navbar-nav .nav-item .dropdown .nav-link:hover,
+.header-two .navbar-light .navbar-nav .active>.nav-link{
+    color: #5191fa;
+}
+.package-one:hover .ct-action li .booking-btn,
+.footer-bottom,
+.place-box .wapper-img .pop-btn:hover,
+.add-area a:hover,
+.single_package .media-body .btn-packlist:hover,
+.about-content .read-btn:hover,
+.datepicker.dropdown-menu table tr th.dow,
+.btn-tour,
+.hero-slider__content .hero-slider__btn.active, .hero-slider__content .hero-slider__btn:hover,
+.header_top_area.type-two {
+    background: #5191fa;
+}
+.package-one:hover .ct-action li .booking-btn,
+.place-box .wapper-img .pop-btn:hover,
+.add-area a:hover,
+.single_package .media-body .btn-packlist:hover,
+.about-content .read-btn:hover,
+.slider-type-two .hero-slider__content .hero-slider__btn.active, .slider-type-two .hero-slider__content .hero-slider__btn:hover,
+main.hero-slide .slick-prev:hover, main.hero-slide .slick-next:hover{
+    border-color: #5191fa;
+}
+main.hero-slide.slide-type-four .slick-prev:hover,
+ main.hero-slide.slide-type-four .slick-next:hover {
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid transparent;
+}
+.bg-img-counter::before,
+.slider-type-two .item::before {
+  
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 0.85) 0%, rgba(9, 9, 121, 0.78) 35%, rgba(0, 212, 255, 0.86) 100%);
+}
+.bg-img-counter::before{
+    opacity: 1;
+}
+#btn-to-top{
+    border-bottom: 60px solid #5191fa;
+}

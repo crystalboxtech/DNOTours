@@ -1,0 +1,181 @@
+<div class="modal-body">
+  <form>
+    <div class="modal-body row">
+      <div class="col-md-12">
+        <form [formGroup]="tourForm">
+          <div style="display: none;">
+            <label for="sel1"   style="display: none;">Tour Code:</label>
+            <input type="text" class="form-control" formControlName="tour_code" id="exampleInputPassword1"
+              placeholder="Tour Title">
+            <br>
+          </div>
+          <!-- <label for="sel1">Tour Title:</label>
+          <input type="text" class="form-control" formControlName="tour_name" id="exampleInputPassword1"
+            placeholder="Tour Title"
+            [class.is-invalid]="f['tour_name'].invalid && (f['tour_name'].dirty || f['tour_name'].touched)">
+             <div *ngIf="submitted && f['tour_name'].errors" class="invalid-feedback">
+              <div *ngIf="f['tour_name'].errors['required']">Fullname is required</div>
+            </div> -->
+            <!-- <div *ngIf="f['tour_name'].errors?.['required']">Username is required</div>
+            <div *ngIf="f['tour_name'].errors?.['minlength']" style="color: red;">
+              Username must be at least 6 characters
+            </div>
+          <br>  -->
+
+          <div class="modal-body row">
+            <div class="col-md-6">
+              <div class="col mb-2">
+                <label for="name" class="form-label">Name:</label>
+                <input type="text"  name="name" formControlName="tour_name" id="exampleInputPassword1" placeholder="Your name" required minlength="1" maxlength="250" class="form-control form-control-sm" [class.is-invalid]="f['tour_name'].invalid && (f['tour_name'].dirty || f['tour_name'].touched)">
+                <div *ngIf="f['tour_name'].invalid && (f['tour_name'].dirty || f['tour_name'].touched)" class="invalid-feedback">
+                  <div *ngIf="f['tour_name'].errors?.['required']">
+                    Tour Name is required.
+                  </div>
+                  <div *ngIf="f['tour_name'].errors?.['minlength']">
+                    Tour Name least 3 character.
+                  </div>
+                  <div *ngIf="f['tour_name'].errors?.['maxlength']">
+                    Tour Name must have at most 50 characters.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="col mb-2">
+                <label for="name" class="form-label">Day:</label>
+                <input type="number"  name="name" formControlName="tour_day" id="exampleInputPassword1" placeholder="How many day?" required minlength="1" maxlength="250" class="form-control form-control-sm" [class.is-invalid]="f['tour_day'].invalid && (f['tour_day'].dirty || f['tour_day'].touched)">
+                <div *ngIf="f['tour_day'].invalid && (f['tour_day'].dirty || f['tour_day'].touched)" class="invalid-feedback">
+                  <div *ngIf="f['tour_day'].errors?.['required']">
+                    Tour day is required.
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <div class="modal-body row">
+          <div class="col-md-6">
+            <div class="col mb-2">
+              <label for="name" class="form-label">Tour night:</label>
+              <input type="number"  name="name" formControlName="tour_night" id="exampleInputPassword1" placeholder="How many Night?" required minlength="1" maxlength="250" class="form-control form-control-sm" [class.is-invalid]="f['tour_night'].invalid && (f['tour_night'].dirty || f['tour_night'].touched)">
+              <div *ngIf="f['tour_night'].invalid && (f['tour_night'].dirty || f['tour_night'].touched)" class="invalid-feedback">
+                <div *ngIf="f['tour_night'].errors?.['required']">
+                  Tour Night is required.
+                </div>
+              </div>
+            </div>
+          </div>
+    
+          <div class="col-md-6">
+            <div class="col mb-2">
+              <label for="name" class="form-label">Tour Price:</label>
+              <input type="number"  name="name" formControlName="tour_price" id="exampleInputPassword1" placeholder="Tour price?" required minlength="1" maxlength="250" class="form-control form-control-sm" [class.is-invalid]="f['tour_price'].invalid && (f['tour_price'].dirty || f['tour_price'].touched)">
+              <div *ngIf="f['tour_price'].invalid && (f['tour_price'].dirty || f['tour_price'].touched)" class="invalid-feedback">
+                <div *ngIf="f['tour_price'].errors?.['required']">
+                  This field is required.
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+
+
+      
+      <div class="modal-body row">
+        <div class="col-md-6">
+          <div class="col mb-2">
+            <label for="name" class="form-label">Tour Rate:</label>
+            <input type="number"  name="name" formControlName="tour_rate" id="exampleInputPassword1" placeholder="Rate" required minlength="1" maxlength="250" class="form-control form-control-sm" [class.is-invalid]="f['tour_rate'].invalid && (f['tour_rate'].dirty || f['tour_rate'].touched)">
+            <div *ngIf="f['tour_rate'].invalid && (f['tour_rate'].dirty || f['tour_night'].touched)" class="invalid-feedback">
+              <div *ngIf="f['tour_rate'].errors?.['required']">
+                Tour rate is required.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <div class="modal-body row">
+      <div class="col-md-6">
+        <label for="sel1">Contry:</label>
+        <ng-select class="custom" [(ngModel)]="selectedContry" class="custom" [multiple]="true"
+          (change)="selectedcountry($event)">
+          <ng-option *ngFor="let type of Contry" [value]="type.name">{{type.name}}</ng-option>
+        </ng-select>
+      </div>
+
+      <div class="col-md-6">
+        <label for="sel1">Tour Type:</label>
+        <ng-select  [(ngModel)]="selectedtype" class="custom" [multiple]="true"
+          (change)="selectetype($event)">
+          <ng-option *ngFor="let type of type" [value]="type.id">{{type.name}}</ng-option>
+        </ng-select>
+      </div> 
+  </div>
+       <label for="exampleFormControlTextarea1">Discription</label>
+
+          <div class="NgxEditor__Wrapper">
+            <ngx-editor-menu [editor]="discription"> </ngx-editor-menu>
+            <ngx-editor [editor]="discription" [ngModel]="html_discription" [disabled]="false"
+              [placeholder]="'Type here...'" formControlName="discription" [class.is-invalid]="f['tour_night'].invalid && (f['tour_night'].dirty || f['tour_night'].touched)"></ngx-editor>
+          </div>
+          <br>
+          <label for="exampleFormControlTextarea1">OverView</label>
+
+          <div class="NgxEditor__Wrapper">
+            <ngx-editor-menu [editor]="overview"> </ngx-editor-menu>
+            <ngx-editor [editor]="overview" [ngModel]="html_overview" [disabled]="false" [placeholder]="'Type here...'"
+              formControlName="overview"></ngx-editor>
+          </div>
+          <br>
+          <label for="exampleFormControlTextarea1">Trip Highlights</label>
+
+          <div class="NgxEditor__Wrapper">
+            <ngx-editor-menu [editor]="tour_highlights"> </ngx-editor-menu>
+            <ngx-editor [editor]="tour_highlights" [ngModel]="html_tour_highlights" [disabled]="false"
+              [placeholder]="'Type here...'" formControlName="tour_highlights"></ngx-editor>
+          </div>
+          <br>
+          <label for="exampleFormControlTextarea1">Tour Information</label>
+
+          <div class="NgxEditor__Wrapper">
+            <ngx-editor-menu [editor]="tour_information"> </ngx-editor-menu>
+            <ngx-editor [editor]="tour_information" [ngModel]="html_tour_information" [disabled]="false"
+              [placeholder]="'Type here...'" formControlName="tour_information"></ngx-editor>
+          </div>
+          <br>
+          <label for="exampleFormControlTextarea1">What's Included</label>
+
+          <div class="NgxEditor__Wrapper">
+            <ngx-editor-menu [editor]="included"> </ngx-editor-menu>
+            <ngx-editor [editor]="included" [ngModel]="html_included" [disabled]="false" [placeholder]="'Type here...'"
+              formControlName="included"></ngx-editor>
+          </div>
+          <br>
+          <label for="exampleFormControlTextarea1">What's Excluded</label>
+
+          <div class="NgxEditor__Wrapper">
+            <ngx-editor-menu [editor]="excluded"> </ngx-editor-menu>
+            <ngx-editor [editor]="excluded" [ngModel]="html_excluded" [disabled]="false" [placeholder]="'Type here...'"
+              rows="10" formControlName="excluded"></ngx-editor>
+          </div>
+
+
+   
+
+          <div class="modal-body">
+            <input #fileUploader type="file" name="files" accept="pdf" (change)="onFileChanged($event)">
+            <br>
+          </div>
+        </form>
+
+      </div>
+
+
+    </div>
+
+
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" #closebutton data-dismiss="modal">Close</button>
+      <button type="button" (click)="onSubmit()" class="btn btn-primary">Save changes</button>
+    </div>

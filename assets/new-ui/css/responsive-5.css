@@ -1,0 +1,370 @@
+@media (max-width: 1340px) {
+	main.hero-slide .slick-prev {
+		left: 5px;
+	}
+	main.hero-slide .slick-next {
+		right: 5px;
+	}
+}
+
+@media (max-width: 1200px) {
+	.search_area .form-control, .search_area input {
+		width: 160px;
+	}
+	.destination-slide .wapper-img .pop-btn {
+		padding: 10px 20px;
+	}
+	.hero-slider__content .hero-slider__title {
+		font-size: 40px;
+		line-height: 48px;
+	}
+	.recent-post-list li .post-thum {
+		height: 110px;
+	}
+	.bg-error {
+		height: 600px;
+	}
+	.navbar-light .navbar-nav {
+		padding-right: 15px;
+	}
+}
+
+@media (max-width: 992px) {
+	.about2-jettrip-tour .image-box, .tour-block-one .inner-box {
+		margin-bottom: 30px;
+	}
+	.contact-form .form-group input {
+		height: 52px;
+		margin-bottom: 18px;
+		padding-left: 24px;
+	}
+	.search_area .form-control, .search_area input {
+		width: 95% !important;
+	}
+	.search_area.booking-tour .form-control, .search_area.booking-tour input {
+		width: 100% !important;
+		margin-right: 0;
+	}
+	.search_area.search_area_two .input-group-addon {
+		right: 30px;
+	}
+	.search_area-inner .form-group {
+		max-width: 50%;
+		width: 50%;
+	}
+	/* .service-one img,
+	.header-two .navbar {
+		display: none;
+	} */
+	.header-two, .header-fixed.stick {
+		background: #212121;
+	}
+	.search_area_two.search_area {
+		margin-top: 40px;
+	}
+	.video-img-box {
+		margin-bottom: 30px;
+	}
+	.single_package .media {
+		display: block;
+	}
+	.single_package .media img {
+		width: 100%;
+		max-width: 100%;
+	}
+	.recent-post-list li {
+		height: 70px;
+	}
+	.recent-post-list li .post-thum {
+		height: auto;
+	}
+	.hero-slide-three .item {
+		height: 845px;
+	}
+	main.hero-slide.slider-type-two .item img, main.hero-slide .item img, .hero-slide-three .item img {
+		height: 850px;
+	}
+	.single_package .media-body {
+		padding: 30px 20px;
+	}
+	.search_area_two.search_area.booking-tour .form-group {
+		max-width: 100%;
+		width: 100%;
+	}
+	.contact-form, .sidebar-box {
+		margin-top: 30px;
+	}
+	.single-blog .search-box .btn-search i {
+		top: 45px;
+	}
+	.search_area .form-group {
+		margin-bottom: 20px;
+	}
+	.search_area_three .search_area-inner, .search_area-inner {
+		margin-top: 100px;
+		border-radius: 0;
+		-webkit-border-radius: 0;
+		-moz-border-radius: 0;
+		-ms-border-radius: 0;
+		-o-border-radius: 0;
+	}
+	.offer-area-three {
+		background-image: none;
+		background: #d0dee9;
+	}
+	.about-three .img-wapper {
+		margin-bottom: 30px;
+	}
+	.search_area.search_area_three .btn-tour, .search_area.search_area_three .form-control, .search_area.search_area_three input {
+		border-radius: 0;
+		-webkit-border-radius: 0;
+		-moz-border-radius: 0;
+		-ms-border-radius: 0;
+		-o-border-radius: 0;
+	}
+	.about-content h2 {
+		margin-bottom: 20px;
+		font-size: 28px;
+		line-height: 36px;
+	}
+	.hotel-diss {
+		margin-bottom: 30px;
+	}
+}
+
+@media (max-width: 768px) {
+	.offer-area-one {
+		height: 490px;
+	}
+	.aboutfeature li {
+		list-style: none;
+		display: inline-block;
+		width: 66%;
+		padding: 7px 0px;
+		font-size: 16px;
+		text-transform: capitalize;
+	}
+	.about-section {
+		padding: 70px 0px;
+	}
+	.demo-5 {
+		--color-text: #fff;
+		--color-bg: #576267;
+		--color-link: #000;
+		--color-link-hover: #da281b;
+		--color-stitle: #000;
+		--fontsize-stitle: 6vw;
+		--color-sdesc: #f1f1f1;
+		--color-slink: #f1f1f1;
+		--color-slink-hover: #f1f1f1;
+		--color-slink-bg: #000;
+		--color-slink-hover-bg: #da281b;
+		--color-nav: #f1f1f1;
+		--color-nav-hover: #da281b;
+	}
+	.header_top_area {
+		display: none;
+	}
+	.header-one {
+		top: 0;
+	}
+	.bg-sky {
+		background: #b7e3ee;
+	}
+	.bg-yallow {
+		background: #ffc952;
+	}
+	.bg-blue {
+		background: #62c8df;
+	}
+	.search_area_two.search_area.booking-tour {
+		display: block;
+	}
+	.search_area_two.search_area.booking-tour .pl-0 {
+		padding-left: 15px !important;
+	}
+	.search_area_two.search_area {
+		display: none;
+	}
+	.hero-slide-three .slick-prev, .hero-slide-three .slick-next, main.hero-slide .slick-prev, main.hero-slide .slick-next, .slider-type-one .item img {
+		opacity: 0;
+		visibility: hidden;
+	}
+	.hero-slide-three .slick-dots, main.hero-slide .slick-dots {
+		display: block !important;
+		bottom: 40px;
+	}
+	main.hero-slide .slick-dots li button:before {
+		font-size: 14px;
+	}
+	.hero-slide-three .slick-dots li button:before {
+		font-size: 14px;
+		color: #fff;
+	}
+	.hero-slide.slider-type-two .slick-dots li button:before {
+		color: #fff;
+	}
+	.hero-slider__content {
+		text-align: left;
+	}
+	.footer-widget .title {
+		margin-bottom: 30px;
+	}
+	.footer-widget {
+		margin-bottom: 40px;
+	}
+	.comment-box .left-comment-box {
+		max-width: 25%;
+		float: none;
+		margin-right: 20px;
+		margin-bottom: 20px;
+	}
+	.bg-error {
+		background-image: none;
+	}
+}
+
+@media (max-width: 580px) {
+	.offer-area-one {
+		height: 560px;
+	}
+	.about2-jettrip-tour .image-box .image-2 {
+		position: relative;
+		margin-top: 30px;
+		margin-bottom: 30px;
+	}
+	.about2-jettrip-tour .image-box {
+		padding: 0px;
+		max-width: 500px;
+		margin: 0 auto;
+	}
+	.aboutfeature li {
+		list-style: none;
+		width: 100%;
+		padding: 10px 0px;
+		font-size: 16px;
+		text-transform: capitalize;
+	}
+	.jetrip_travel_tour_area:before {
+		display: none;
+	}
+	.jetrip_travel_tour_area:after {
+		width: 100%
+	}
+	.jetrip_travel_box5 {
+		padding: 0;
+		width: 100%;
+		float: none;
+	}
+	.jetrip_travel_tour_area {
+		padding: 70px 0;
+	}
+	.jetrip_travel_box5 {
+		text-align: center;
+	}
+	.jetrip_travel_box5 h2 {
+		font-size: 35px
+	}
+	.jetrip_travel_box5 p {
+		line-height: 34px
+	}
+	.video-btn {
+		display: none;
+	}
+	.jetrip_travel_tour_area:after {
+		display: none;
+		bottom: 0;
+		content: "";
+		right: 0;
+		position: absolute;
+		top: 0;
+		width: 45%;
+		left: 0;
+		z-index: -1
+	}
+	.demo-5 {
+		--color-text: #fff;
+		--color-bg: #576267;
+		--color-link: #000;
+		--color-link-hover: #da281b;
+		--color-stitle: #000;
+		--fontsize-stitle: 9vw;
+		--color-sdesc: #f1f1f1;
+		--color-slink: #f1f1f1;
+		--color-slink-hover: #f1f1f1;
+		--color-slink-bg: #000;
+		--color-slink-hover-bg: #da281b;
+		--color-nav: #f1f1f1;
+		--color-nav-hover: #da281b;
+	}
+	.search_area-inner .form-group {
+		max-width: 100%;
+		width: 100%;
+	}
+	.testi-slide-one .slick-slide>div {
+		padding: 10px 5px;
+	}
+	.hero-slider__content .hero-slider__title {
+		font-size: 35px;
+		line-height: 42px;
+	}
+	.hero-slider__content .hero-slider__btn {
+		padding: 8px 20px;
+		margin-bottom: 10px;
+	}
+	h2 {
+		font-size: 35px;
+		line-height: 45px;
+	}
+	.add-area h2>span {
+		font-size: 45px;
+		line-height: 54px;
+	}
+	.comment-box .right-comment-content h3 {
+		margin-right: 35px;
+	}
+	.search_area .form-control, .search_area input {
+		width: 100% !important;
+	}
+	#accordion .panel-title i {
+		display: none;
+	}
+	span.input-group-addon {
+		right: 18px;
+	}
+	.hotel-pics-one {
+		margin-bottom: 30px;
+	}
+}
+
+@media (max-height: 550px) {
+	.offer-area-one {
+		height: 560px;
+	}
+	.aboutfeature li {
+		list-style: none;
+		width: 100%;
+		padding: 10px 0px;
+		font-size: 16px;
+		text-transform: capitalize;
+	}
+	.demo-5 {
+		--color-text: #fff;
+		--color-bg: #576267;
+		--color-link: #000;
+		--color-link-hover: #da281b;
+		--color-stitle: #000;
+		--fontsize-stitle: 9vw;
+		--color-sdesc: #f1f1f1;
+		--color-slink: #f1f1f1;
+		--color-slink-hover: #f1f1f1;
+		--color-slink-bg: #000;
+		--color-slink-hover-bg: #da281b;
+		--color-nav: #f1f1f1;
+		--color-nav-hover: #da281b;
+	}
+	.slicknav_nav {
+		overflow-y: scroll;
+		height: 250px;
+	}
+}

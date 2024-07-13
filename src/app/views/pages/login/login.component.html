@@ -1,0 +1,85 @@
+<div class="bg-light min-vh-100 d-flex flex-row align-items-center" style="background-image: url('https://img.freepik.com/free-photo/big-ben-westminster-bridge-sunset-london-uk_268835-1395.jpg?w=740&t=st=1695105716~exp=1695106316~hmac=7d6af9f77d3dff23d8cf7c8ff7344d322c73de59c589a88ffa95bd3058f8fa99');background-repeat: no-repeat;background-size: cover;">
+  <c-container >
+    <c-row class="justify-content-center">
+      <c-col md="8">
+        <c-card-group style="background-color: #fffef1;">
+          <c-card class="p-4">
+            <c-card-body>
+              <form [formGroup]="loginForm"  (ngSubmit)="onSubmit()">
+                <h1>Login</h1>
+                <p class="text-medium-emphasis">Sign In to your account</p>
+                <c-input-group class="mb-3">
+                  <span cInputGroupText>
+                    <svg cIcon name="cilUser"></svg>
+                  </span>
+            
+
+                    <input type="text" formControlName="user_name" class="form-control" placeholder="User name" [ngClass]="{ 'is-invalid': f['user_name'].touched && f['user_name'].errors }" />
+                     <div *ngIf="f['user_name'].touched && f['user_name'].errors" class="invalid-feedback">
+                      <div *ngIf="f['user_name'].errors['required']">User name is required</div>
+                  </div>
+                </c-input-group>
+                <!-- <p style="color: red;">
+                  Please enter username
+                </p> -->
+                <c-input-group class="mb-4">
+                  <span cInputGroupText>
+                    <svg cIcon name="cilLockLocked"></svg>
+                  </span>
+              
+                  <input type="text" formControlName="password" class="form-control" placeholder="Password" [ngClass]="{ 'is-invalid': f['password'].touched && f['password'].errors }" />
+                  <div *ngIf="f['password'].touched && f['password'].errors" class="invalid-feedback">
+                   <div *ngIf="f['password'].errors['required']">password is required</div>
+               </div>
+                
+                </c-input-group>
+
+
+                <!-- <div class="form-group">
+                  <label>First Name</label>
+                  <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': f['firstName'].touched && f['firstName'].errors }" />
+                  <div *ngIf="f['firstName'].touched && f['firstName'].errors" class="invalid-feedback">
+                      <div *ngIf="f['firstName'].errors['required']">First Name is required</div>
+                  </div>
+              </div> -->
+
+
+           
+               <!-- <p style="color: red;">
+                  Please enter password
+                </p> -->
+                <c-row>
+                  <c-col xs="6">
+                    <button cButton class="px-4" color="primary"  [disabled]="!loginForm.valid" type="submit">
+                      submit
+                    </button>
+                  </c-col>
+                  <!-- <c-col class="text-right" xs="6">
+                    <button cButton class="px-0" color="link">
+                      Forgot password?
+                    </button>
+                  </c-col> -->
+                </c-row>
+              </form>
+            </c-card-body>
+          </c-card>
+          <c-card [ngStyle]="{'width.%': 44}" class="text-white  py-5" style="background: white;">
+            <c-card-body class="text-center">
+              <div>
+               
+
+
+                <img src="../../../../assets/site/img/core-img/logologin.png" alt="Girl in a jacket" width="500" height="600">
+                <button [active]="true" cButton class="mt-3" color="primary" routerLink="/register">
+                  Register Now!
+                </button>
+              </div>
+            </c-card-body>
+          </c-card>
+        </c-card-group>
+      </c-col>
+    </c-row>
+    
+
+  </c-container>
+</div>

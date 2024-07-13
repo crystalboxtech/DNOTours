@@ -1,0 +1,177 @@
+
+
+
+
+<div class="container">
+  <div class="table-wrapper">
+    <div class="table-title">
+      <div class="row">
+        <div class="col-sm-6" >
+          <!-- <h2 style="color: white; padding: 10px;"> <b>User</b></h2> -->
+          <div class="input-group" style="color: white; padding: 10px;">
+            <input type="search" #player class="form-control rounded" placeholder="Search " aria-label="Search" aria-describedby="search-addon" />
+
+            <button type="button" class="btn btn-primary" (click)="onsearch(player.value,SearchColumn)">
+              <i class="fa fa-search" aria-hidden="true"></i>
+            </button>
+          </div>
+        
+        </div>
+        <div class="col-sm-6" style="padding: 10px;">
+          <a data-toggle="modal" data-target="#exampleModalCenter" (click)="adddata(null)"  class="btn btn-success" data-toggle="modal"><i class="fa fa-plus-circle" aria-hidden="true"></i> <span>Add New User</span></a>
+        
+        </div>
+       
+      </div>
+    </div>
+    <table class="table table-striped table-hover">
+     
+      <thead>
+        <tr>
+          <!-- <th>
+            <span class="custom-checkbox">
+								<input type="checkbox" id="selectAll">
+								<label for="selectAll"></label>
+							</span>
+          </th> -->
+          <th >#</th>
+          <th (click)="changeSearchcolumn('user_name')">User Name  <i class="fa fa-fw fa-sort"></i></th>
+          <th (click)="changeSearchcolumn('type_name')">Type  <i class="fa fa-fw fa-sort"></i></th>
+          <th (click)="changeSearchcolumn('email')">Email  <i class="fa fa-fw fa-sort"></i></th>
+          <th (click)="changeSearchcolumn('mobile_number')">Phone  <i class="fa fa-fw fa-sort"></i></th>
+          <th>Actions</th>
+          <th>Booking</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users;  let i=index">
+          <td>{{i+1}}</td>
+          <td>{{user.user_name}}</td>
+          <td>{{user.type_name}}</td>
+          <td>{{user.email}}</td>
+          <td>(+91) {{user.mobile_number}}</td>
+          <td>
+
+            <i class="fa fa-pencil" aria-hidden="true" (click)="editdata(user)" data-toggle="modal" data-target="#exampleModalCenter"></i>
+            &nbsp;<i class="fa fa-trash-o" aria-hidden="true" (click)="deleteData(user)"></i>
+          </td>
+          <td >
+            <div *ngIf="user.user_type==4" >
+              <button  type="button" class="btn btn-primary btn-sm" (click)="bookingdata(user)"  data-toggle="modal" data-target="#bookingEmployeeModal"><span class="fa fa-trash-o"></span>&nbsp;Booking</button>
+            </div>
+         
+          
+          </td>
+
+
+        </tr>
+    
+      </tbody>
+    </table>
+    <div class="clearfix">
+      <!-- <div class="hint-text">Showing <b>{{pageSize}}</b> out of <b>{{totalCount}}</b> entries</div> -->
+      <ul class="pagination">
+        <li (click)="navigateToPage(1)" class="page-item disabled"><a  class="page-link"><i class="fa fa-fast-backward" aria-hidden="true"></i></a></li>
+        <li (click)="navigateToPage(index - 1)" class="page-item"><a  class="page-link"><i class="fa fa-step-backward" aria-hidden="true"></i></a></li>
+        <li  (click)="navigateToPage(index + 1)" class="page-item"><a class="page-link"><i class="fa fa-step-forward" aria-hidden="true"></i></a></li>
+         <li (click)="navigateToPage(maxPages)" class="page-item"><a  class="page-link"><i class="fa fa-fast-forward" aria-hidden="true"></i></a></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+
+
+<div id="bookingEmployeeModal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form>
+        <div class="modal-header">
+          <h4 class="modal-title">Booking Tour</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="BookingForm">
+            <label for="sel1">User  Name:</label>
+            <input type="text" class="form-control" formControlName="user_name" id="exampleInputPassword1"
+              placeholder="User Name" >
+            <br>
+            <label for="sel1" >Tour Type:</label>
+           
+            <ng-select [items]="tourlist" id="test" bindLabel="name" appendTo="body" [multiple]="false" formControlName="tour"
+                style="padding: 30px;border-style: groove; background: white;">
+            </ng-select>
+            <br>
+            <label for="sel1">Person:</label>
+            <input type="number" class="form-control" formControlName="Person" id="exampleInputPassword1"
+            placeholder="Person">
+          <br>
+           
+     
+          
+          
+         
+  
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" #closebutton  data-dismiss="modal">Close</button>
+          <button type="button" (click)="booking()" class="btn btn-primary">Booking</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Add User</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="userForm">
+          <label for="sel1">User  Name:</label>
+          <input type="text" class="form-control" formControlName="user_name" id="exampleInputPassword1"
+            placeholder="User Name">
+          <br>
+          <label for="sel1">Password:</label>
+          <input type="text" class="form-control" formControlName="password" id="exampleInputPassword1"
+            placeholder="Password">
+          <br>
+          <div class="form-group">
+            <label for="exampleFormControlSelect1">Example select</label>
+            <select class="form-control" formControlName="user_type" id="exampleFormControlSelect1">
+              <option *ngFor="let order of orders; let i = index" [value]="orders[i].id">
+                {{orders[i].name}}
+              </option>
+            </select>
+          </div>
+          <br>
+          <label for="sel1">Mobile number:</label>
+          <input type="text" class="form-control" id="exampleInputPassword1"  formControlName="mobile_number"
+            placeholder="Mobile number">
+          <br>
+          <label for="sel1">Email:</label>
+          <input type="text" class="form-control" id="exampleInputPassword1" formControlName="email"
+            placeholder="Email">
+
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" #closebutton  data-dismiss="modal">Close</button>
+        <button type="button" (click)="onSubmit()" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+
+ 
+</div>
+<!-- Modal -->
+

@@ -1,0 +1,172 @@
+<!--<c-header class="mb-4 d-print-none" position="sticky">-->
+<ng-container>
+  <c-container [fluid]="true">
+    <button
+      toggle="visible"
+      cHeaderToggler
+      [cSidebarToggle]="sidebarId"
+      class="ps-1"
+    >
+      <svg cIcon
+        name="cilMenu"
+        size="lg"
+      ></svg>
+    </button>
+    <c-header-nav class="d-none d-lg-flex me-auto">
+      <!-- <c-nav-item>
+        <a cNavLink routerLink="/dashboard" routerLinkActive="active">
+          Dashboard
+        </a>
+      </c-nav-item>
+      <c-nav-item>
+        <a cNavLink routerLink="/users" routerLinkActive="active">Users</a>
+      </c-nav-item>
+      <c-nav-item>
+        <a cNavLink routerLink="/settings" routerLinkActive="active">
+          Settings
+        </a>
+      </c-nav-item> -->
+    </c-header-nav>
+
+    <c-header-nav class="d-none d-lg-flex">
+      <c-nav-item>
+        <a routerLink="./" cNavLink>
+          <svg cIcon name="cilBell" size="lg"></svg>
+        </a>
+      </c-nav-item>
+      <!-- <c-nav-item>
+        <a routerLink="./" cNavLink>
+          <svg cIcon name="cilList" size="lg"></svg>
+        </a>
+      </c-nav-item>
+      <c-nav-item>
+        <a routerLink="./" cNavLink>
+          <svg cIcon name="cilEnvelopeOpen" size="lg"></svg>
+        </a>
+      </c-nav-item> -->
+    </c-header-nav>
+    <c-header-nav class="ms-3">
+      <ng-container *ngTemplateOutlet="userDropdown"></ng-container>
+    </c-header-nav>
+
+  </c-container>
+  <!-- <c-header-divider></c-header-divider> -->
+  <!-- <c-container [fluid]="true">
+    <c-breadcrumb-router class="ms-2"></c-breadcrumb-router>
+  </c-container> -->
+</ng-container>
+<!--</c-header>-->
+
+<ng-template #userDropdown>
+  <c-dropdown alignment="end" variant="nav-item">
+    <button
+      cButton
+      color=""
+      [caret]="false"
+      cDropdownToggle
+      class="py-0"
+    >
+      <c-avatar
+        cTextColor="primary"
+        shape="rounded-1"
+        size="md"
+        src="data:image/jpeg;base64,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"
+        status="success"
+      >
+      </c-avatar>
+
+      <c-badge class="ms-2 float-end" color="info">
+        HI {{username}}
+      </c-badge>
+    </button>
+    <ul cDropdownMenu class="pt-0 pr-5 w-auto" style="background: #f8f9fa;">
+      <li>
+        <h6 cDropdownHeader class="bg-light fw-semibold py-2">Account</h6>
+      </li>
+      <li>
+        <a routerLink="./" cDropdownItem (click)="website()">
+          <svg cIcon class="me-2" name="cilUser"></svg>
+          website
+        </a>
+      </li>
+      <li>
+        <a routerLink="./" cDropdownItem (click)="logout()">
+          <svg cIcon class="me-2" name="cilUser"></svg>
+          Logout
+        </a>
+      </li>
+    <!--   <li>
+        <a routerLink="./" cDropdownItem>
+          <svg cIcon class="me-2" name="cilEnvelopeOpen"></svg>
+          Messages
+          <c-badge class="ms-2 float-end" color="success">
+            42
+          </c-badge>
+        </a>
+      </li>
+      <li>
+        <a routerLink="./" cDropdownItem>
+          <svg cIcon class="me-2" name="cilTask"></svg>
+          Tasks
+          <c-badge class="ms-2 float-end" color="danger">
+            42
+          </c-badge>
+        </a>
+      </li>
+      <li>
+        <a routerLink="./" cDropdownItem>
+          <svg cIcon class="me-2" name='cilCommentSquare'></svg>
+          Comments
+          <c-badge class="ms-auto" color="warning">
+            42
+          </c-badge>
+        </a>
+      </li>
+      <li>
+        <h6 cDropdownHeader class="bg-light fw-semibold py-2">Settings</h6>
+      </li>
+      <li></li>
+      <li>
+        <a routerLink="./" cDropdownItem>
+          <svg cIcon class="me-2" name="cilUser"></svg>
+          Profile
+        </a>
+      </li>
+      <li>
+        <a routerLink="./" cDropdownItem>
+          <svg cIcon class="me-2" name="cilSettings"></svg>
+          Settings
+        </a>
+      </li>
+      <li>
+        <a routerLink="./" cDropdownItem>
+          <svg cIcon class="me-2" name="cilCreditCard"></svg>
+          Payments
+          <c-badge class="ms-2 float-end" color="secondary">
+            42
+          </c-badge>
+        </a>
+      </li>
+      <li>
+        <a routerLink="./" cDropdownItem>
+          <svg cIcon class="me-2" name="cilFile"></svg>
+          Projects
+          <c-badge class="ms-2 float-end" color="primary">
+            42
+          </c-badge>
+        </a>
+      </li>
+      <li>
+        <hr cDropdownDivider/>
+      </li>
+      <li>
+        <a routerLink="./" cDropdownItem>
+          <svg cIcon class="me-2" name="cilLockLocked"></svg>
+          Lock Account
+        </a>
+      </li> -->
+      <!-- <li></li> -->
+    </ul>
+  </c-dropdown>
+</ng-template>
+

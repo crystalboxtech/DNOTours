@@ -1,0 +1,381 @@
+
+   
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title -->
+    <title>Dno tours</title>
+
+    <!-- Favicon -->
+   
+
+
+    <!-- Preloader -->
+   
+    <!-- ***** Search Form Area ***** -->
+    <div class="dorne-search-form d-flex align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="search-close-btn" id="closeBtn">
+                        <i class="pe-7s-close-circle" aria-hidden="true"></i>
+                    </div>
+                    <form action="#" method="get">
+                        <input type="search" name="caviarSearch" id="search" placeholder="Search Your Desire Destinations or Events">
+                        <input type="submit" class="d-none" value="submit">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+  
+    <!-- ***** Header Area End ***** -->
+    <header class="header_area" id="header">
+        <div class="container-fluid h-100">
+            <div class="row h-100">
+                <div class="col-12 h-100">
+                    <nav class="h-100 navbar navbar-expand-lg">
+                        <a class="navbar-brand" href="index.html"><img src="../../../../assets/site/img/core-img/logo.png" alt=""></a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#dorneNav" aria-controls="dorneNav" aria-expanded="false" aria-label="Toggle navigation"><span class="fa fa-bars"></span></button>
+                        <!-- Nav -->
+                        <div class="collapse navbar-collapse" id="dorneNav">
+                            <ul class="navbar-nav mr-auto" id="dorneMenu">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" (click)="openAllTour()">All Tour</a>
+                                </li>
+                        
+                                <li class="nav-item dropdown"   >
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tour Type <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown2"  >
+                                        <div *ngFor="let ty of TypeListWithCount"> 
+                                        <a class="dropdown-item"  (click)="openTourtype(ty)">{{ty.name}}</a>
+                                    </div>
+                                
+                                    </div>
+                                </li>
+                                <li class="nav-item dropdown"   >
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Contry <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown2" >
+                                        <div *ngFor="let co of Contry"> 
+                                        <a class="dropdown-item" (click)="openContrytype(co)">{{co.name}}</a>
+                                    </div>
+                                    </div>
+                                </li>
+                             
+                                <li class="nav-item">
+                                    <a class="nav-link" (click)="opencontact()">Contact</a>
+                                </li>
+                            </ul>
+                            <!-- Search btn -->
+                        
+                            <!-- Signin btn -->
+                        
+                            <!-- Add listings btn -->
+                            <div class="dorne-add-listings-btn">
+                                <a (click)="openSingInPage()" style="color: white;" class="btn dorne-btn">+ Sign in  or Register</a>
+                            </div>
+                        </div>
+                    </nav>
+                    
+                </div>
+            </div>
+        </div>
+    </header>
+      <section class="same-section-spacing bg-banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12" style="padding-top: 50px;">
+                    <div class="banner-box">
+                        <h2>Package Details</h2>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Package Details</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End-banner-area -->
+    <!-- Start-Package-Section -->
+    <section class="ws-section-spacing bg-gray " style="padding-top: 100px;">
+        <div class="container">
+
+            <div class="row masonry-item" *ngFor="let tour of tours">
+                <div class="col-lg-12 col-md-12 col-sm-12 masonry">
+                    <div class="package-detail">
+                        <div class="package-list-wrap ">
+                            <img src="../../../../assets/images/place.jpg" class="img-fluid" alt="det-img">
+                            <div class="package-list-content">
+                                <p class="package-list-duration">{{tour.tour_day}} Day and {{tour.tour_night}} Night <span
+                                        class="rate">{{tour.tour_price}}/person</span>
+                                </p>
+                               
+                                <a class="package-list-button"  data-toggle="modal" data-target="#exampleModalCenter">Book Now</a>
+                            </div>
+                            <!-- <span class="off-box">OFF 40%</span> -->
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="package-info">
+                                 <div [innerHTML]=tour.discription>
+                   
+                                </div>
+                      
+                            </div>
+                        </div>
+                        <div class="row m-0">
+                            <div class="col-lg-5">
+                                <div class="hotel-diss"  *ngFor="let tour of tours">
+                                    <h4>Overview</h4>
+                                    <div [innerHTML]=tour.overview>
+                                    </div>
+                                    <h4>Highlights</h4>
+                                    <div [innerHTML]=tour.tour_highlights>
+                                    </div>
+                                    <h4>Information</h4>
+                                    <div [innerHTML]=tour.tour_information>
+                   
+                                    </div>
+                                    <h4>Included</h4>
+                                    <div [innerHTML]=tour.included>
+                   
+                                    </div>
+                                    <h4>Excluded</h4>
+                                    <div [innerHTML]=tour.excluded>
+                   
+                                    </div>
+                                    
+                                    <div class="rating">
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star-half-empty"></span>
+                                        <span class="fa  fa-star-o"></span>
+                                        <span>(3 Ratings)</span>
+                                    </div>
+                                    <a class="map-viw" href="#"><i class="fa fa-map-marker"></i> View on Map</a>
+                                    <a href="booking.html" class="h-book"   data-toggle="modal" data-target="#exampleModalCenter">Booking Now</a>
+                                </div>
+                            </div>
+                            <div class="col-lg-7">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 ">
+                                        <div class="hotel-pics-one">
+                                            <img src="../../../../assets/images/hot-1.jpg" alt="pack-1">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6">
+                                        <div class="hotel-pics-two">
+                                            <img src="../../../../assets/images/hot-2.jpg" alt="pack-1">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+          
+
+        </div>
+    </section>
+    <!-- End-Package-Section -->
+
+    <!-- offer-section -->
+
+    <!-- ***** Header Area End ***** -->
+    <div *ngFor="let tour of tours">
+    
+      
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Booking Form</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="modal-body row">
+                        <div class="col-md-12">
+                            <form [formGroup]="bookingForm">
+                              
+         
+                            <label for="sel1">Tour Title:</label>
+                            <input type="text" class="form-control"  formControlName="tour_name" id="exampleInputPassword1" placeholder="Tour Title">
+                            <br>
+                            <label for="sel1">Booking for person name:</label>
+                            <input type="text" class="form-control"  formControlName="Booking_for_person_name" id="exampleInputPassword1" placeholder="Full name">
+                            <br>
+                            <label for="sel1">Email:</label>
+                            <input type="text" class="form-control"  formControlName="Booking_for_person_Email" id="exampleInputPassword1" placeholder="Email">
+                            <br>
+                            <label for="sel1">Mobile:</label>
+                            <input type="text" class="form-control"  formControlName="Booking_for_person_Mobile" id="exampleInputPassword1" placeholder="MObile">
+                            <br>
+                            <div style="display: none;">
+                            <label for="sel1">tour code:</label>
+                            <input type="text" class="form-control"  formControlName="tour_code" id="exampleInputPassword1" placeholder="tour code">
+                            <br>
+                            </div>
+                            
+                            <label for="sel1">Parson:</label>
+                            <input type="number" class="form-control"  formControlName="parson" id="exampleInputPassword1" placeholder="Parson">
+                            <br>
+                            
+                            <label for="sel1">Coupan:</label>
+                            <input type="number" class="form-control"  formControlName="coupan" id="exampleInputPassword1" placeholder="Coupan">
+                            <br>
+                            <label for="sel1">Price:</label>
+                            <input type="number" class="form-control"  formControlName="price" id="exampleInputPassword1" placeholder="Price" >
+                            <br>
+
+                        </form>
+                        </div>
+                    </div>
+        
+                            </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal" #closebutton>Close</button>
+              <button type="button" class="btn btn-primary" (click)="onSubmit()">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+
+
+
+
+<footer class="ws-section-spacing img-footer" style="padding-top: 100px;">
+
+    <div class="container p-4 pb-0">
+        <!-- Section: Links -->
+        <section class="">
+          <!--Grid row-->
+          <div class="row">
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+              <h6 class="text-uppercase mb-4 font-weight-bold" style="color: #fff;">
+              DNO Tours
+              </h6>
+              <p style="color: #fff;">DNO Tours OPC Private Limited is a dynamic and innovative travel company that caters to the needs
+                of modern travellers.We specialize in providing top-notch travel experiences across a range of
+                segments, including corporate trips, group travel, family vacations, visa services. Our team at
+                Dnotours understands that travel is more than just getting from place to place.</p>
+            <ul class="footer-icon">
+                <li href="https://www.instagram.com/dnotours/" target="_blank" style="color: white;"><i
+                        class="fa fa-instagram" aria-haspopup="true"></i></li>
+                <li href="https://twitter.com/dnotours" target="_blank" style="color: white;"><i
+                        class="fa fa-twitter" aria-haspopup="true"></i></li>
+                <li href="https://www.facebook.com/dnotours" target="_blank" style="color: white;"><i
+                        class="fa fa-facebook" aria-haspopup="true"></i></li>
+            </ul>
+            </div>
+            <!-- Grid column -->
+  
+            <hr class="w-100 clearfix d-md-none" />
+  
+            <!-- Grid column -->
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+              <h6 class="text-uppercase mb-4 font-weight-bold" style="color: #fff;">Useful links</h6>
+             
+              <p>
+                <a class="text-white" href="index.html">Home <span class="sr-only">(current)</span></a>
+              </p>
+              <p>
+                <a class="text-white" (click)="openAllTour()">All Tour</a>
+              </p>
+              <p>
+                <a class="text-white" (click)="opencontact()">Contact</a>
+              </p>
+            
+            </div>
+            <!-- Grid column -->
+  
+            <hr class="w-100 clearfix d-md-none" />
+  
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3" style="color: #fff;">
+              <h6 class="text-uppercase mb-4 font-weight-bold" style="color: #fff;">
+                Why Choose Us
+              </h6>
+              <p>
+                <a class="text-white" style="color: #fff;">Best Travel Agent</a>
+              </p>
+              <p>
+                <a class="text-white" style="color: #fff;">Best Price</a>
+              </p>
+              <p>
+                <a class="text-white" style="color: #fff;">Trust & Safety</a>
+              </p>
+              <p>
+                <a class="text-white" style="color: #fff;">Post Sale Services</a>
+              </p>
+            
+            </div>
+  
+            <!-- Grid column -->
+            <hr class="w-100 clearfix d-md-none" />
+  
+            <!-- Grid column -->
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3" style="color: #fff;">
+              <h6 class="text-uppercase mb-4 font-weight-bold" style="color: #fff;">Contact</h6>
+              <p style="color: #fff;"><i class="fas fa-home mr-3"></i>  Office #07, Jay Apartments, MG Road, Kandivali West, Mumbai-400067, Maharashtra, India</p>
+              <p style="color: #fff;"><i class="fas fa-envelope mr-3"></i>  itinerantur@dnotours.com</p>
+              <p style="color: #fff;"><i class="fas fa-phone mr-3"></i> +91 93244 32021</p>
+
+            </div>
+            <!-- Grid column -->
+          </div>
+          <!--Grid row-->
+        </section>
+        <!-- Section: Links -->
+  
+        <hr class="my-3">
+  
+        <!-- Section: Copyright -->
+        <section class="p-3 pt-0">
+          <div class="row d-flex align-items-center">
+            <!-- Grid column -->
+            <div class="col-md-7 col-lg-8 text-center text-md-start">
+              <!-- Copyright -->
+              <div class="p-3" style="color: #fff;">
+                © 2020 Copyright:
+                <a class="text-white" href="https://mdbootstrap.com/"
+                   >DNO Tours</a
+                  >
+              </div>
+              <!-- Copyright -->
+            </div>
+            <!-- Grid column -->
+  
+            <!-- Grid column -->
+            
+            <!-- Grid column -->
+          </div>
+        </section>
+        <!-- Section: Copyright -->
+      </div>
+</footer>
+
+
+
+
+
+  

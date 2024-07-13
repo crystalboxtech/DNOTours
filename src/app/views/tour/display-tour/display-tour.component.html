@@ -1,0 +1,74 @@
+
+
+
+
+<div class="container">
+    <div class="table-wrapper">
+      <div class="table-title">
+        <div class="row">
+          <div class="col-sm-6" >
+            <!-- <h2 style="color: white; padding: 10px;"> <b>User</b></h2> -->
+            <div class="input-group" style="color: white; padding: 10px;">
+              <input type="search" #player class="form-control rounded" placeholder="Search " aria-label="Search" aria-describedby="search-addon" />
+  
+              <button type="button" class="btn btn-primary" (click)="onsearch(player.value,SearchColumn)">
+                <i class="fa fa-search" aria-hidden="true"></i>
+              </button>
+            </div>
+          
+          </div>
+      
+         
+        </div>
+      </div>
+      <table class="table table-striped table-hover">
+       
+        <thead>
+          <tr>
+            <!-- <th>
+              <span class="custom-checkbox">
+                                  <input type="checkbox" id="selectAll">
+                                  <label for="selectAll"></label>
+                              </span>
+            </th> -->
+            <th >#</th>
+            <th (click)="changeSearchcolumn('tour_name')">tour_name <i class="fa fa-fw fa-sort"></i></th>
+            <th >duration </th>
+            <th >Price  </th>
+            <th >rate  </th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let Tour of Tours;  let i=index">
+            <td>{{i+1}}</td>
+            <td>{{Tour.tour_name}}</td>
+            <td>{{Tour.tour_day}} Day and {{Tour.tour_night}} Night</td>
+            <td>{{Tour.tour_price}}</td>
+            <td>{{Tour.tour_rate}}</td>
+            <td>
+              <i class="fa fa-pencil" aria-hidden="true" (click)="editdata(Tour)"></i>
+            &nbsp;  <i class="fa fa-trash-o" aria-hidden="true" (click)="deleteData(Tour)"></i>
+            </td>
+ 
+          </tr>
+      
+        </tbody>
+      </table>
+      <div class="clearfix">
+        <!-- <div class="hint-text">Showing <b>{{pageSize}}</b> out of <b>{{totalCount}}</b> entries</div> -->
+        <ul class="pagination">
+          <li (click)="navigateToPage(1)" class="page-item disabled"><a  class="page-link"><i class="fa fa-fast-backward" aria-hidden="true"></i></a></li>
+          <li (click)="navigateToPage(index - 1)" class="page-item"><a  class="page-link"><i class="fa fa-step-backward" aria-hidden="true"></i></a></li>
+          <li  (click)="navigateToPage(index + 1)" class="page-item"><a class="page-link"><i class="fa fa-step-forward" aria-hidden="true"></i></a></li>
+          <li (click)="navigateToPage(maxPages)" class="page-item"><a  class="page-link"><i class="fa fa-fast-forward" aria-hidden="true"></i></a></li>
+        </ul>
+      </div>
+  
+    </div>
+  </div>
+  
+  
+
+  
+  <!-- Modal -->

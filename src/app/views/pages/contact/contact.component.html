@@ -1,0 +1,258 @@
+
+   
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title -->
+    <title>Dno tours</title>
+
+    <!-- Favicon -->
+   
+
+
+    <!-- Preloader -->
+   
+    <!-- ***** Search Form Area ***** -->
+    <div class="dorne-search-form d-flex align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="search-close-btn" id="closeBtn">
+                        <i class="pe-7s-close-circle" aria-hidden="true"></i>
+                    </div>
+                    <form action="#" method="get">
+                        <input type="search" name="caviarSearch" id="search" placeholder="Search Your Desire Destinations or Events">
+                        <input type="submit" class="d-none" value="submit">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ***** Header Area End ***** -->
+
+    <header class="header_area" id="header">
+        <div class="container-fluid h-100">
+            <div class="row h-100">
+                <div class="col-12 h-100">
+                    <nav class="h-100 navbar navbar-expand-lg">
+                        <a class="navbar-brand" href="index.html"><img src="../../../../assets/site/img/core-img/logo.png" alt=""></a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#dorneNav" aria-controls="dorneNav" aria-expanded="false" aria-label="Toggle navigation"><span class="fa fa-bars"></span></button>
+            
+                        <div class="collapse navbar-collapse" id="dorneNav">
+                            <ul class="navbar-nav mr-auto" id="dorneMenu">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" (click)="openAllTour()">All Tour</a>
+                                </li>
+                        
+                                <li class="nav-item dropdown"   >
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tour Type <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown2"  >
+                                        <div *ngFor="let ty of TypeListWithCount"> 
+                                        <a class="dropdown-item"  (click)="openTourtype(ty)">{{ty.name}}</a>
+                                    </div>
+                                
+                                    </div>
+                                </li>
+                                <li class="nav-item dropdown"   >
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Contry <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown2" >
+                                        <div *ngFor="let co of Contry"> 
+                                        <a class="dropdown-item" (click)="openContrytype(co)">{{co.name}}</a>
+                                    </div>
+                                    </div>
+                                </li>
+                             
+                                <li class="nav-item">
+                                    <a class="nav-link" (click)="opencontact()">Contact</a>
+                                </li>
+                            </ul>
+         
+                            <div class="dorne-add-listings-btn" >
+                                <a (click)="openSingInPage()" style="color: white;" class="btn dorne-btn">+ Sign in  or Register</a>
+                            </div>
+
+                            <div class="dropdown" *ngIf=dashbordDisplay>
+
+                                <i class="fa fa-user" style="font-size:30px;color:black; padding: 10px;" data-toggle="dropdown" ></i>
+                       
+                                <!-- <img src="https://cdn-icons-png.flaticon.com/512/666/666201.png" class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" alt="logo" width="10" height="10"> -->
+                                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"><h6  *ngIf=dashbordDisplay> Hi {{username}}</h6>
+                                <span class="caret"></span></button>
+                                <ul class="dropdown-menu">
+                                  <li> <a (click)="openDashnord()" style="color: white;" class="btn dorne-btn mb-1" *ngIf=dashbordDisplay>Dashboard</a></li>
+                                  <li><a (click)="logout()" style="color: white;" class="btn dorne-btn" *ngIf=dashbordDisplay>Logout</a></li>
+                              
+                                </ul>
+                              </div>
+                            </div>
+                  
+                    </nav>
+                    
+                </div>
+            </div>
+        </div>
+    </header> 
+    <!-- ***** Header Area End ***** -->
+    <div >
+    <!-- ***** Breadcumb Area Start ***** -->
+  
+    <!-- ***** Breadcumb Area Start ***** -->
+    <div class="breadcumb-area bg-img bg-overlay" style="background-image: url(img/bg-img/hero-1.jpg)">
+    </div>
+    <!-- ***** Breadcumb Area End ***** -->
+
+    <!-- ***** Contact Area Start ***** -->
+    <div class="dorne-contact-area d-md-flex" id="contact">
+        <!-- Contact Form Area -->
+        <div class="contact-form-area equal-height">
+            <div class="contact-text">
+                <h4>Hello, Get in touch with us</h4>
+                <!-- <p>Simply fill in the form providing your contact details and some information about your query and we'll do our best to get back to you as soon as we can.</p> -->
+                
+				<div class="contact-info d-lg-flex">
+                    
+                    <div class="single-contact-info">
+                        <h6><i class="fa fa-envelope-o" aria-hidden="true"></i> itinerantur@dnotours.com</h6>
+                        <h6><i class="fa fa-phone" aria-hidden="true"></i> +91 93244 32021</h6>
+						 <h6><i class="fa fa-map-signs" aria-hidden="true"></i> Office #07, Jay Apartments, MG Road, Kandivali West, Mumbai-400067, Maharashtra, India</h6>
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+        <!-- Map Area -->
+        <div class="dorne-map-area equal-height">
+            <!-- <div id="googleMap"></div> -->
+			
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3767.762163065486!2d72.83574887520864!3d19.20558768202581!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b6c351edf721%3A0x769dacd2b0000000!2sDNO%20Tours%20OPC%20Private%20Limited-%20Best%20Travel%20agency%20in%20Mumbai!5e0!3m2!1sen!2sin!4v1692183793097!5m2!1sen!2sin" width=100% height=100% style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+
+
+
+</div>
+<div *ngIf="isLoading"  class="fade show" style="text-align: center; padding-top: calc(100vh / 2); height: 100vh">
+    <i class="spinner-grow spinner-grow-sm"></i>
+    <span class="m-1">Loading...</span>
+  </div>
+
+    <!-- Footer-section -->
+    <footer class="ws-section-spacing img-footer" style="padding-top: 100px;">
+
+        <div class="container p-4 pb-0">
+            <!-- Section: Links -->
+            <section class="">
+              <!--Grid row-->
+              <div class="row">
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                  <h6 class="text-uppercase mb-4 font-weight-bold" style="color: #fff;">
+                  DNO Tours
+                  </h6>
+                  <p style="color: #fff;">DNO Tours OPC Private Limited is a dynamic and innovative travel company that caters to the needs
+                    of modern travellers.We specialize in providing top-notch travel experiences across a range of
+                    segments, including corporate trips, group travel, family vacations, visa services. Our team at
+                    Dnotours understands that travel is more than just getting from place to place.</p>
+                <ul class="footer-icon">
+                    <li href="https://www.instagram.com/dnotours/" target="_blank" style="color: white;"><i
+                            class="fa fa-instagram" aria-haspopup="true"></i></li>
+                    <li href="https://twitter.com/dnotours" target="_blank" style="color: white;"><i
+                            class="fa fa-twitter" aria-haspopup="true"></i></li>
+                    <li href="https://www.facebook.com/dnotours" target="_blank" style="color: white;"><i
+                            class="fa fa-facebook" aria-haspopup="true"></i></li>
+                </ul>
+                </div>
+                <!-- Grid column -->
+      
+                <hr class="w-100 clearfix d-md-none" />
+      
+                <!-- Grid column -->
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                  <h6 class="text-uppercase mb-4 font-weight-bold" style="color: #fff;">Useful links</h6>
+                 
+                  <p>
+                    <a class="text-white" href="index.html">Home <span class="sr-only">(current)</span></a>
+                  </p>
+                  <p>
+                    <a class="text-white" (click)="openAllTour()">All Tour</a>
+                  </p>
+                  <p>
+                    <a class="text-white" (click)="opencontact()">Contact</a>
+                  </p>
+                
+                </div>
+                <!-- Grid column -->
+      
+                <hr class="w-100 clearfix d-md-none" />
+      
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3" style="color: #fff;">
+                  <h6 class="text-uppercase mb-4 font-weight-bold" style="color: #fff;">
+                    Why Choose Us
+                  </h6>
+                  <p>
+                    <a class="text-white" style="color: #fff;">Best Travel Agent</a>
+                  </p>
+                  <p>
+                    <a class="text-white" style="color: #fff;">Best Price</a>
+                  </p>
+                  <p>
+                    <a class="text-white" style="color: #fff;">Trust & Safety</a>
+                  </p>
+                  <p>
+                    <a class="text-white" style="color: #fff;">Post Sale Services</a>
+                  </p>
+                
+                </div>
+      
+                <!-- Grid column -->
+                <hr class="w-100 clearfix d-md-none" />
+      
+                <!-- Grid column -->
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3" style="color: #fff;">
+                  <h6 class="text-uppercase mb-4 font-weight-bold" style="color: #fff;">Contact</h6>
+                  <p style="color: #fff;"><i class="fas fa-home mr-3"></i>  Office #07, Jay Apartments, MG Road, Kandivali West, Mumbai-400067, Maharashtra, India</p>
+                  <p style="color: #fff;"><i class="fas fa-envelope mr-3"></i>  itinerantur@dnotours.com</p>
+                  <p style="color: #fff;"><i class="fas fa-phone mr-3"></i> +91 93244 32021</p>
+    
+                </div>
+                <!-- Grid column -->
+              </div>
+              <!--Grid row-->
+            </section>
+            <!-- Section: Links -->
+      
+            <hr class="my-3">
+      
+            <!-- Section: Copyright -->
+            <section class="p-3 pt-0">
+              <div class="row d-flex align-items-center">
+                <!-- Grid column -->
+                <div class="col-md-7 col-lg-8 text-center text-md-start">
+                  <!-- Copyright -->
+                  <div class="p-3" style="color: #fff;">
+                    © 2020 Copyright:
+                    <a class="text-white" href="https://mdbootstrap.com/"
+                       >DNO Tours</a
+                      >
+                  </div>
+                  <!-- Copyright -->
+                </div>
+                <!-- Grid column -->
+      
+                <!-- Grid column -->
+                
+                <!-- Grid column -->
+              </div>
+            </section>
+            <!-- Section: Copyright -->
+          </div>
+    </footer>
+   
